@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>贾宝玉</button>
+    <button>贾宝玉</button>
+    <button>贾宝玉</button>
+    <button>贾宝玉</button>
+    <button>贾宝玉</button>
+    <script>
+        var btns = document.getElementsByTagName('button')
+        for (var i = 0; i < btns.length; i++) {
+            //  伪数组不能直接使用，要用[]才能选中里面的内容；
+            btns[i].onclick = function () {
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].style.backgroundColor = ''
+
+                }
+                this.style.backgroundColor = 'pink'
+            }
+        }
+        console.log(i);
+    </script>
+</body>
+
+</html>

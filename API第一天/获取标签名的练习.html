@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>听闻有一故人已死，故人是谁，姑苏林黛玉</li> 
+         <li>听闻有一故人已死，故人是谁，姑苏林黛玉</li>
+        <li>听闻有一故人已死，故人是谁，姑苏林黛玉</li>
+        <li>听闻有一故人已死，故人是谁，姑苏林黛玉</li>
+        <li>听闻有一故人已死，故人是谁，姑苏林黛玉</li> 
+    </ul>
+    <ol id = ol>
+        <li>姑苏林黛玉</li>
+        <li>姑苏林黛玉</li>
+        <li>姑苏林黛玉</li>
+        <li>姑苏林黛玉</li>
+        <li>姑苏林黛玉</li>
+    </ol>
+    <script>
+        var lis = document.getElementsByTagName('li')
+        console.log(lis);
+        console.log(lis[0]);
+        // 如果我们想要获得lis里面的每个值，就可以把i遍历一遍
+        for (var i = 0;i < lis.length;i++){
+            console.log(lis[i]);
+        }
+    </script>
+     <script>
+        var ol = document.getElementsByTagName('ol')
+        console.log(ol[0].getElementsByTagName('li'));
+        // console.log(ol[0].getElementsByTagName('li'));
+        // 我们得到的元素是一个动态的，因为里面的值会随着外面的设置而改变
+        // 如果页面中只有一个li，那么返回的也是一个数组形式，而且还是一个伪数组，如果页面中没有这个li，那么返回的就是一个空的伪数组
+        var ol = document.getElementById('ol');
+        // 这个就是给父元素设置一个标签名，然后通过标签名再去找我们需要找的数值
+        console.log(ol.getElementsByTagName('li'));
+        // 这个就是直接打印我们标签名里面想要找的数值
+    </script>
+</body>
+</html>

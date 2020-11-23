@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="images/close.png" alt="" id="eye">
+        </label>
+        <input type="password" name="" id="pwd">
+    </div>
+    <script>
+        var img = document.getElementById('eye')
+        var typ = document.getElementById('pwd')
+        // var flag = true;
+        // true有一个默认值，默认值为0
+        var flag = true;
+    eye.onclick = function (){
+        pwd.type = flag ?'text':'password';
+        // 这一行代码意思是；如果type等于0，那么就是以文字的方式来显示，也就是说输入密码的时候我们可以看得见输入的内容，
+        // 如果type不等于0 ，那么就是以密码的方式来显示，也就是说，输入密码的时候我们看不见输入的内容
+        eye.src = flag ?'images/open.png':'images/close.png'
+        // 这一行代码的意思是；如果输入的数字等于0，那么显示的图像就是打开的眼睛；如果输入的数字不等于0 ，那么显示的图像就是闭合的
+        // 每次对 flag 进行取反
+        flag = !flag
+    }
+    // var flag = true;
+    //     eye.onclick = function () {
+    //         pwd.type = flag ? 'text' : 'password';
+    //         eye.src = flag ? 'images/open.png' : 'images/close.png';
+    //         // 每次对 flag 进行取反
+    //         flag = !flag;
+    //     }
+    </script>
+</body>
+</html>

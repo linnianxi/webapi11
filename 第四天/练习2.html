@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<img src="./u=3138903665,2057696537&fm=26&gp=0.jpg" alt="">
+    <!-- <img src="../API第一天/s.gif" alt=""> -->
+    <script>
+        // // 先获取元素
+        // var img = document.querySelector('img')
+        // // 再给图片定位
+        // img.style.position = 'absolute'
+        // // 鼠标经过onmousemove
+        // document.onmousemove = function(e){
+        //     // 记住一定要添加px，，left是x轴
+        //     img.style.left = e.clientX + 'px'
+        //     // topshii y 轴
+        //     img.style.top = e.clientY + 'px'
+        // }
+            var img = document.querySelector('img')
+            img.style.position = 'absolute'
+            document.onmousemove = function(e){
+                img.style.left = e.clientX + 'px'
+                img.style.top = e.clientY + 'px'
+            }
+    </script>
+</body>
+</html>

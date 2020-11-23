@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id = "time">2019-9-9</div>
+    <script>
+    //   因为我们文档是从上往下进行加载，所以显得有标签，所以script要写到标签下面；
+    // 通过ID找到内容
+    var timer = document.getElementById('time')
+    console.log(timer);
+</script> -->
+<ul>
+    <li>姑苏林黛玉</li>
+    <li>姑苏林黛玉</li>
+    <li>姑苏林黛玉</li>
+    <li>姑苏林黛玉</li>
+    <li>姑苏林黛玉</li>
+</ul>
+<script>
+    var tis = document.getElementsByTagName('li')
+    console.log(tis);
+    // 如果想要的到tis里面的某一个数字，就必须要用[]
+    console.log(tis[0]);
+    // 我们想要依次打印里面的内容，就用遍历来做
+    for (var i = 0;i < tis.length;i++) {
+        console.log(tis[i]);
+    }
+</script>
+</body>
+</html>

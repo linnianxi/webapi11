@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    手机号：<input type="text"><button>发送</button>
+    <!-- 获取元素 -->
+    <script>
+        var but = document.querySelector('button')
+        // 然后再监听鼠标事件
+        but.addEventListener('click',function(){
+            // 鼠标点击一次之后就直接被禁用了
+            but.disabled = true
+        })
+    </script>
+</body>
+</html>

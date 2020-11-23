@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+            font-size: 30px;
+            color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //     var div = document.querySelector('div')
+        //     getTime()
+        //     setInterval(getTime,1000)
+        //     function getTime(){
+        //    var time = new Date();
+        //    var year = time.getFullYear();
+        //    var month = time.getMonth() + 1;
+        //    var dates = time.getDate();
+        //    var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        //    var d = time.getDay();
+        // //    d = d < 10? '0'+ d:d;
+        //    var h = time.getHours();
+        //    h = h < 10? '0'+ h :h;
+        //    var m = time.getMinutes();
+        //    m = m < 10? '0'+ m : m;
+        //    var s = time.getSeconds();
+        //    s = s < 10 ? '0' + s:s ;
+        //    div.innerHTML = year + '年' + month + '月' + dates + '日' + arr[d] + h + ':' + m + ':' + s 
+        //     }
+            // 先获取
+        var div = document.querySelector('div')
+        // 先让函数运行一遍，不然刷新的时候会出现空白状况
+        getTime()
+        // 设置定时器
+        setInterval(getTime,1000)
+        // 函数封装
+        function getTime() {
+            var time = new Date();
+            var year = time.getFullYear();
+            var month = time.getMonth();
+            var date = time.getDate();
+            // 给d里面设置数值
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var d = time.getDay();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + M : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            div.innerHTML = year + '年' + month +'月' + date + '日' + arr[d] + h + ':' + m + ':' + s
+        }
+    </script>
+</body>
+
+</html>

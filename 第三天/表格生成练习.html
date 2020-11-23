@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <!-- <script>
+        // 我们需要先准备好学生的数据
+        var dates = [
+            {
+                name: '魏璎珞',
+                subject: 'javaScript',
+                score: '100',
+            },
+            {
+                name: '弘历',
+                subject: 'javaScript',
+                score: '99',
+            },
+            {
+                name: '傅恒',
+                subject: 'javaScript',
+                score: '100',
+            },
+            {
+                name: '容音',
+                subject: 'javaScript',
+                score: '100',
+            }
+        ]
+        // 获取tbody
+        var tbody = document.querySelector('tbody')
+        // 现在可以循环插入行
+        for (var i = 0; i < dates.length; i++) {
+            // 创建tr
+            var tr = document.createElement('tr')
+            // 把tr插入到tbody里面
+            tbody.appendChild(tr)
+            // 行里面创建单元格td,单元格里面的数量取决于每个对象里面的属性个数
+            for(var k in dates[i]){
+            //    这个for循环管的是列 
+            // 创建单元格   【列    td】
+            var td = document.createElement('td')
+            // 现在需要给td赋值,这个值就是行和列里面的其中一个
+            td.innerHTML = dates[i][k]
+             // 把单元格插入到行里面去，就是td
+             tr.appendChild(td)
+            }
+            // 现在我们可以开始创建【删除】两个字的单元格了
+            var  td = document.createElement('td')
+            // 创建完成之后再给单元格添加内容
+            td.innerHTML = '<a href = "javaScript:;">删除</a>'
+            tr.appendChild(td)
+        }
+// 删除操作开始
+// 先获取创建的a
+        var as = document.querySelectorAll('a')
+        // 把a都循环一遍
+        for(var i = 0;i < as.length;i++){
+            // 进行绑定事件的操作
+           as[i].onclick = function (){
+            //    删除节点的公式是
+            // node.removeChild(child)
+            // node指的是()值得父亲，也就是说是tr的父亲也就是说是tbody
+            // ()里面的this指的是当前点击的那个元素，就是删除，删除的父亲是td，td的父亲是tr
+               tbody.removeChild(this.parentNode.parentNode)
+           }
+        }
+
+    </script> -->
+    <script>
+        // // 先准备数据
+        // var dates = [
+        //     {name: '贾宝玉',
+        //     subject: 'java',
+        //     score: '100'},
+        //     {name: '林黛玉',
+        //     subject: 'java',
+        //     score: '99'},
+        //     {name: '探春',
+        //     subject: 'java',
+        //     score: '80'},
+        //     {name: '王熙凤',
+        //     subject: 'java',
+        //     score: '99'}
+        // ]
+        // // 所有的数据都是要放到tbody的行里面的，所有我们要先获取行
+        // var tbody = document.querySelector('tbody')
+        // for (var i = 0;i < dates.length;i++){
+        //     // 现在开始创建行
+        //     var tr = document.createElement('tr')
+        //     // 现在可以把创建好的行茶语到tbody里面
+        //     tbody.appendChild(tr)
+        //     // 现在可以开始创建单元格了，也就是列
+        //    for(var k in dates[i]){
+        //     var td = document.createElement('td')
+        //     // 赋值
+        //     td.innerHTML = dates[i][k]
+        //     tr.appendChild(td)
+        //    }
+        // //    开始创建【删除】单元格
+        // var td = document.createElement('td')
+        // // 并且还需要赋值给a
+        // td.innerHTML ='<a href = "javaScript:;">删除</a>'
+        // tr.appendChild(td)
+
+        // }
+        // // 操作删除键
+        // // 先获取as
+        // var as = document.querySelectorAll('a')
+        // for (var i =0;i < as.length;i++){
+        //     as[i].onclick = function(){
+        //         tbody.removeChild(this.parentNode.parentNode)
+        //     }
+        // }
+        var dates = [{
+            nane :'林见鹿',
+            subject:'历史',
+            score:'98',
+        },
+        {
+            nane :'海见鲸',
+            subject:'历史',
+            score:'99',
+        },
+        {
+            nane :'梦无你',
+            subject:'历史',
+            score:'100',
+        },
+        {
+            nane :'孙超超',
+            subject:'历史',
+            score:'100',
+        },
+        ]
+    //   先获取学生数据信息
+    var tbody = document.querySelector('tbody')
+    // 创建行  for循环
+for (var i = 0;i<dates.length;i++){
+    var tr = document.createElement('tr')
+    tbody.appendChild(tr);
+    // 创建列td
+    for(var k in dates[i]){
+       var td = document.createElement('td') ;
+       td.innerHTML = dates[i][k]
+       tr.appendChild(td)
+    }
+    // 创建删除按钮
+    var td = document.createElement('td')
+    td.innerHTML = '<a href = "javascript:;">删除</a>'
+    tr.appendChild(td)
+}
+// 操作删除键
+var as = document.querySelectorAll('a')
+for (var i = 0;i < as.length;i++){
+    as[i].onclick = function(){
+        tbody.removeChild(this.parentNode.parentNode)
+    }
+}
+    </script>
+</body>
+
+</html>

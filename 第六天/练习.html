@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .one {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .two {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button>夏雨荷</button>
+  <div class="one"></div>
+  <div class="two"></div>
+    <script>
+        var but = document.querySelector('button')
+        var one = document.querySelector('.one');
+        var two = document.querySelector('.two');
+  but.addEventListener('click',function(){
+      setInterval(function(){
+          if(one.style.left)
+         one.style.left = one.offsetLeft + 5 + 'px' 
+      },30);
+      setInterval(function(){
+          two.style.left = two.offsetLeft + 5 + 'px'
+      },80)
+  })
+    </script>
+</body>
+</html>

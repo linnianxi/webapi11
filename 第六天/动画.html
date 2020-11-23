@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .xzw {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            left: 0;
+        }
+
+        /* .xyh {
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            left: 0;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="xzw"></div>
+
+    <script>
+        // 先获取
+        var xzw = document.querySelector('.xzw');
+// 设置一个定时器。，并且给这个定时器命名
+   var time = setInterval(function(){
+if(xzw.offsetLeft>=400){
+    return
+}else{ xzw.style.left = xzw.offsetLeft + 5 + 'px'}
+   
+},30)
+    </script>
+</body>
+
+</html

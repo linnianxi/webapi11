@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // 先获取input框
+        var search = document.querySelector('input')
+// 再监听一个键盘事件，键盘向上弹起
+       document.addEventListener
+       ('keyup',function(e){
+        //    给一个判断条件，如果ASCll值是83，那么我们键盘上按的就是  s  按键
+           if( e.keyCode === 83){
+           search.focus();
+           }
+       }) 
+    </script>
+</body>
+</html>

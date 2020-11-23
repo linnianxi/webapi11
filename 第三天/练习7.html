@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com/">众里寻他千百度</a>
+    <script>
+        // 第一种方式
+        // 先获取
+        var oA = document.querySelector('a')
+        // 进行绑定事件
+        oA.onclick = function(){
+            // 阻止链接跳转的默认行为
+            return false
+        }
+        // 第二种方式
+        var oA = document.querySelector('a')
+        
+    </script>
+</body>
+</html>

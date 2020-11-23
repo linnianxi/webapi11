@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        td,
+        th {
+            border: 1px solid #333;
+        }
+        
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+<script>
+    // 先准备好学生的数据
+    var datas = [{
+        // 这里用的是数组里面包含的对象，数组里面可以放任何内容
+            name: '魏璎珞',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: '弘历',
+            subject: 'JavaScript',
+            score: 98
+        }, {
+            name: '傅恒',
+            subject: 'JavaScript',
+            score: 99
+        }, {
+            name: '明玉',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: '大猪蹄子',
+            subject: 'JavaScript',
+            score: 0
+        }];
+// 往数组里面建行
+        var tbody = document.createElement('tdoby')
+        for(var i = 0;i < datas.length;i++){
+            // 现在要开始创建tr
+            var tr = document.createElement('tr')
+        //    创建完了之后就要开始遍历数组里面的额每一个对象
+        var obj = datas[i]
+        // 现在就可以进行事件绑定
+        }
+</script>
+     
+</body>
+</html>

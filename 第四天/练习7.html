@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../API第一天/x.gif" alt="" class="ad">
+    <script>
+        // 先获取
+    var ad = document.querySelector('.ad')
+    // 定时器 || 函数回调
+    var xxx=setTimeout(function(){
+        //给函数设置属性，这里的属性就是，在3秒之后关掉 
+        ad.style.display = 'none'
+    },3000)
+    //
+    // cleartimeout是清楚函数的，它必须和上面的函数回调用的是相同的，就比如；
+    // setTimeout 和 clearTimeout  这两个字母后面必须都一样，要配套使用
+    clearTimeout(xxx)
+    </script>
+</body>
+</html>

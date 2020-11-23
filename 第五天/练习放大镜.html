@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .beijng {
+            width: 400px;
+            height: 590px;
+        } */
+        .shanghai {
+            width: 400px;
+            position: relative;
+            height: 398px;
+            border: 1px solid #ccc;
+        }
+
+        /* .shanghai img {
+            width: 200px;
+            height: 500px;
+            margin-left: 150px;
+        } */
+
+        .suzhou {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: #FEDE4F;
+            opacity: .5;
+            border: 1px solid #ccc;
+            cursor: move;
+        }
+
+        .wuhu {
+            display: none;
+            position: absolute;
+            left: 610px;
+            top: 0;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            z-index: 999;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        .wuhu img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="beijng"> -->
+    <div class="shanghai">
+        <img src="../s3.png" alt="">
+        <div class="suzhou">原来是孙超呀</div>;
+        <div class="wuhu"><img src="big.jpg" alt="" class="wuhan"></div>
+    </div>
+    <!-- </div> -->
+    <script>
+        //    <!-- 现在开始做JS部分 -->
+        //     <!-- 第一部分，还是先获取 -->
+        // 记住，只要是class类名的，获取元素的时候一定要在后面括号里加上点
+        var shanghai = document.querySelector('.shanghai');
+        var suzhou = document.querySelector('.suzhou');
+        var wuhu = document.querySelector('.wuhu')
+        // 第二部分就是监听事件，当我们的鼠标经过我们的盒子的时候，我们的suzhou和wuhu就会显示出来，当鼠标离开的时候，就会隐藏
+        shanghai.addEventListener('mouseover', function () {
+            suzhou.style.display = 'block';
+            wuhu.style.display = 'block'
+        });
+        shanghai.addEventListener('mouseout', function () {
+            suzhou.style.display = 'none';
+            wuhu.style.display = 'none'
+        })
+        // 第二部分
+        // 鼠标坐标就是从鼠标点击的位置到窗口的位置，因为没有有定位的父盒子，所以就一浏览器的窗口为准，但是遮光层就不一样了，遮光层是有父盒子的，并且是以父盒子为准，如果把鼠标的坐标给了遮光层，那么就会出现偏差，所以是要把父盒子内鼠标的坐标给遮光层
+        // 现在我们要算出鼠标在盒子内的距离
+        // 用鼠标到页面的距离减去盒子到页面的距离，所得出来的结果就是鼠标在盒子内的距离
+        // 给盒子监听鼠标移动事件
+        shanghai.addEventListener('mousemove', function (e) {
+            // 算出鼠标在盒子内的距离，用鼠标到窗口的距离减去盒子到窗口的距离，所得出来的结果就是鼠标在盒子内的距离
+            var x = e.pageX - this.offsetLeft;
+            var y = e.pageY - this.offsetTop;
+            // console.log(x,y);
+            // 现在就是把鼠标在盒子内的距离给到遮光层，因为遮光层是有有定位的父盒子
+            // 然后把鼠标固定在遮光层的正中间的话，就需要减去遮光层自身宽和高各自一半，记住，一定要加单位   【px】
+            var suzhouX = x - suzhou.offsetWidth / 2;
+            var suzhouY = y - suzhou.offsetHeight / 2;
+            // 遮光层的最大移动距离
+            suzhoumaX = shanghai.offsetWidth - suzhou.offsetWidth;
+            if (suzhouX <= 0) {
+                suzhouX = 0;
+            } else if (suzhouX >= suzhoumaX ) {
+                suzhouX = suzhoumaX;
+            }
+            if (suzhouY <= 0) {
+                suzhouY = 0;
+            } else if (suzhouY >= suzhoumaX) {
+                suzhouY = suzhoumaX;
+            }
+            suzhou.style.left = suzhouX + 'px';
+            suzhou.style.top = suzhouY + 'px'
+            // suzhou.style.left = x - suzhou.offsetWidth / 2  + 'px';
+            // 这里的-150是用遮光层自身的高度减去自身高度的一半，这样就能让鼠标在遮光层的正中间了
+            // suzhou.style.top = y - suzhou.offsetHeight / 2 + 'px';
+            var wuhan = document.querySelector('.wuhan');
+            // 图片的最大移动距离
+           var wuhumaX = wuhan.offsetWidth - wuhu.offsetWidth;
+            // 图片的最大距离
+            var
+
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>删除</button>
+    <ul>
+        <li>孙超</li>
+        <li>孙超</li>
+        <li>孙超</li>
+        <li>孙超</li>
+        <li>孙超</li>
+    </ul>
+    <script>
+        // 获取元素
+        var but = document.querySelector('button')
+        var ul = document.querySelector('ul')
+        but.onclick = function(){
+            // ul指的是父元素,括号里面指的是删除父元素里面的第几个孩子，中括号里面的数字就是索引号，并且还是逐次删除
+          if(ul.children.length==0){
+              but.disabled = true
+          }else{
+              ul.removeChild(ul.children[0])
+          }
+        }
+    </script>
+</body>
+</html>

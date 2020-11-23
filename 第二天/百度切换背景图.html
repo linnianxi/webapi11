@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: url(1.jpg) no-repeat center top;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .baidu {
+            overflow: hidden;
+            margin: 100px auto;
+            background-color: #fff;
+            width: 410px;
+            padding-top: 3px;
+        }
+        
+        .baidu li {
+            float: left;
+            margin: 0 1px;
+            cursor: pointer;
+        }
+        
+        .baidu img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="baidu">
+        <li><img src="1.jpg" alt=""></li>
+        <li><img src="2.jpg" alt=""></li>
+        <li><img src="3.jpg" alt=""></li>
+        <li><img src="4.jpg" alt=""></li>
+    </ul>
+    <script>
+        // // 先获取
+        // var imgs = document.querySelectorAll('.baidu img')
+        // // 绑定事件，每张图片被点击之后，那么它的背景图片就会根据你所点击的图片来进行切换
+        // for (var i = 0; i < imgs.length; i++){    imgs[i].onclick = function(){
+        //    document.body.style.backgroundImage = 'url(' + this.src + ')'
+        // }}
+    // var imgs = document.querySelectorAll('img')
+    // for (var i = 0;i < imgs.length; i++){
+    //     imgs[i].onclick = function(){
+    //         document.body.style.backgroundImage = 'url('+ this.src + ')'
+    //     }
+    // }
+    // 先获取所有img，那么就用querySelectorALL
+    // var imgs = document.querySelectorAll('img')
+    // // 然后就把所有的图片都循环一遍，因为不是一张图片，所以要用到循环
+    // for (var i =  0;i < imgs.length;i++){
+    //     // 现在进行事件的绑定，也就是说给imgs设置属性，因为要切换背景，所以我们用的是鼠标点击
+    //     imgs[i].onclick = function(){
+    //     //    当鼠标点击imgs 里的任何一张图片的时候，背景图也会随之更换，所以我们进行了如下操作；
+    //     document.body.style.backgroundImage = 'url(' + this.src + ')'
+    // }
+    // }
+    // var imgs = document.getElementsByTagName('img')
+    // for (var i = 0;i < imgs.length;i++){
+    //     imgs[i].onclick = function(){
+    //         document.body.style.backgroundImage = 'url(' + this.src + ')'
+    //     }
+    // }
+    // 先获取
+    // var imgs = document.getElementsByTagName('img')
+    // // 然后把每个值都循环一遍
+    // for (var i = 0;i < imgs.length;i++){
+    //     // 赋值
+    //     imgs[i].onclick = function(){
+    //         // 当鼠标点击到哪张照片的时候，背景图就会随之发生变化
+    //         document.body.style.backgroundImage = 'url(' + this.src + ')'
+    //     }
+    // }
+    var imgs = document.getElementsByTagName('img')
+    for (var i = 0;i < imgs.length;i++){
+        imgs[i].onclick = function(){
+            document.body.style.backgroundImage = 'url(' + this.src + ')'
+        }
+    }
+    </script>
+</body>
+</html>

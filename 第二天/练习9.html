@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        // 先获取
+        var text = document.querySelector('textarea')
+        var but = document.querySelector('button')
+        var ul = document.querySelector('ul')
+        // 再绑定事件
+        but.onclick = function () {
+            // 先设一个假如，假如text里面的内容为空的话，那么就会弹出一个提示框，并且不再执行这个里面的代码
+            if (text.value == '') {
+                alert('请先输入内容')
+            } else {
+                // 否则，就要开始创建一个节点元素节点
+                var li = document.createElement('li');
+                // 并且这个元素节点需要赋值，现在这个赋值就是等于我们文本框里输入的内容
+                li.innerHTML = text.value
+                // 就是说，我输入一个内容，这个新创建的li就会显示出我在text文本框里输入的内容，如果我输入的内容为空的话，那么就会直接出alert，现在要对新创建的li 进行一个事件的绑定，
+                li.onclick = function(){
+                    // ul.insertBefore(li,ul.children[0])
+                }
+                // 在父元素里面添加节点元素节点，并且是加在最前面的，加的元素节点是li ,每次输入的内容总是在最前面
+                ul.insertBefore(li,ul.children[0])
+            }
+        }
+
+    </script>
+</body>
+
+</html>
